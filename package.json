@@ -8,6 +8,8 @@
     "macaw": "./bin/macaw.js"
   },
   "dependencies": {
-    "commander": "^2.12.2"
+    "commander": "^2.12.2",
+    "download-git-repo": "^1.0.1",
+    "glob": "^7.1.2"
   }
 }
