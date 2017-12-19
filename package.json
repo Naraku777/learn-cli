@@ -1,0 +1,13 @@
+{
+  "name": "learn-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "CTK",
+  "license": "MIT",
+  "bin": {
+    "macaw": "./bin/macaw.js"
+  },
+  "dependencies": {
+    "commander": "^2.12.2"
+  }
+}
