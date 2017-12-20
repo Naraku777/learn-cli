@@ -7,6 +7,8 @@ const path = require('path')
 const fs = require('fs')
 const glob = require('glob')
 
+const download = require('../lib/download')
+
 program
   .usage('<project-name>')
   .parse(process.argv)
@@ -31,7 +33,7 @@ if (list.length) {
     const isDir = fs.statSync(fileName).isDirectory()
     return name.indexOf(projectName) !== -1 && isDir
   }).length !== 0) {
-    console.log(`Project ${projectName} is existed`)
+    console.log(`Project ${projectName} is existed...`)
     return
   }
   rootName = projectName
@@ -44,6 +46,7 @@ if (list.length) {
 go()
 
 function go () {
-  // placeholder, handle child command
-  console.log(path.resolve(process.cwd(), path.join('.', rootName)))
+  download(rootName)
+    .then((target) => console.log(target))
+    .catch((err) => console.log(err))
 }
